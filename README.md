@@ -21,8 +21,8 @@
 
 ### **1️⃣ Clone the Repository**
 
-git clone https://github.com/your-username/fe-assignment.git  
-cd fe-assignment
+git clone https://github.com/gitsforvikki/frontend-assignment  
+cd frontend-assignment
 
 ### **2️⃣ Install Dependencies**
 
