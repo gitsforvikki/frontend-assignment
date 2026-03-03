@@ -35,7 +35,7 @@ export default function Dashboard() {
       <div className="w-full md:ml-64 flex-1 overflow-auto space-y-5">
         <TopHeader />
         {/* Stats Bar */}
-        <div className="bg-white dark:bg-[#0D1621] rounded p-4 md:p-6 ">
+        <div className="bg-white dark:bg-[#0F0F0F] rounded p-4 md:p-6 ">
           <ProjectMeta />
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
@@ -71,7 +71,7 @@ export default function Dashboard() {
         </div>
 
         {/* Table Section */}
-        <div className="rounded bg-white dark:bg-[#0D1621] border border-slate-300 dark:border-slate-700">
+        <div className="rounded bg-white dark:bg-[#0F0F0F] border border-slate-300 dark:border-slate-700">
           {/* Toolbar */}
           <div className="p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-3 mb-6">
             <div className="flex-1 relative w-full">

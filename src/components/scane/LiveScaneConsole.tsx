@@ -7,7 +7,7 @@ export const LiveScaneConsole = () => {
   const [activeTab, setActiveTab] = useState("activity");
 
   return (
-    <div className="flex-1 flex flex-col bg-white dark:bg-[#0D1621] border border-slate-300 dark:border-slate-700 rounded-lg overflow-hidden">
+    <div className="flex-1 flex flex-col bg-white dark:bg-[#0F0F0F] border border-slate-300 dark:border-slate-700 rounded-lg overflow-hidden">
       {/* Console Header */}
       <div className="flex items-center justify-between border-b border-b-slate-200 dark:border-b-slate-700 px-4 py-3 bg-secondary">
         <div className="flex items-center gap-2">
