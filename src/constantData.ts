@@ -1,5 +1,14 @@
 import { ScanType } from "./types";
 
+ export const projectMeta = [
+  { title: "Org", subtitle: "Project X" },
+  { title: "Owner", subtitle: "Nammagiri" },
+  { title: "Total Scans", subtitle: "100" },
+  { title: "Scheduled", subtitle: "1000" },
+  { title: "Rescans", subtitle: "100" },
+  { title: "Failed Scans", subtitle: "100" },
+  { title: "Last Updated", subtitle: "10 mins ago" },
+];
 
 export const scanData: ScanType[] = [
   {

@@ -5,3 +5,14 @@
 .container {
   @apply px-4 sm:px-6 lg:px-8;
 }
+
+.backgroundColor {
+  @apply bg-[#020617];
+}
+
+.lightBackgroundColor {
+  @apply bg-[#f3f4f6];
+}
+.darkBackgroundColor {
+  @apply dark:bg-[#111827];
+}

@@ -67,17 +67,15 @@ export default function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 h-screen w-72 bg-gray-200 dark:bg-gray-950  text-white shadow-2xl transform transition-transform duration-300 z-40 md:translate-x-0 ${
+        className={`fixed left-0 top-0 h-screen w-72 bg-white dark:bg-gray-900 text-white transform transition-transform duration-300 z-40 md:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col h-full">
-          {/* Profile Section */}
-          <div className="p-6 border-b border-slate-700">
-            <Icon />
-          </div>
+        
+  <Icon />
 
-          {/* Navigation */}
+         
           <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -98,7 +96,7 @@ export default function Sidebar() {
                     size={20}
                     className="group-hover:scale-110 transition-transform"
                   />
-                  <span className="font-medium">{item.label}</span>
+                  <span className="font-medium text-gray-500">{item.label}</span>
                 </a>
               );
             })}

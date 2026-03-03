@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const ScaneTable = () => {
   return (
-    <div className="rounded-lg border border-slate-300 dark:border-slate-700 overflow-x-auto">
+    <div className="rounded-lg overflow-x-auto">
       <table className="w-full min-w-max md:min-w-0">
         <thead>
           <tr className="border-b border-b-slate-300 dark:border-b-slate-700 bg-secondary">
