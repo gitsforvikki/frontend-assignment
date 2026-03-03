@@ -52,7 +52,7 @@ export default function Sidebar() {
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-lg text-white transition"
+        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-lg text-gray-700 font-bold dark:text-white transition"
       >
         {isOpen ? "✕" : "☰"}
       </button>

@@ -11,29 +11,17 @@ const steps = [
 export const Progress = () => {
   const progress = 0;
   return (
-    <div className="border border-slate-300 dark:border-slate-700 bg-background p-4 md:p-6 overflow-y-auto">
+    <div className="border border-slate-300 dark:border-slate-700 bg-white dark:bg-[#0D1621] p-4 md:p-6 overflow-y-auto rounded-lg">
       <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
         {/* Circular Progress */}
         <div className="flex flex-col items-center border-b border-r-0  md:border-b-0 md:border-r border-slate-300 dark:border-slate-700 pr-4 md:pr-6 pb-6 md:pb-0">
-          <div className="relative w-20 md:w-24 h-20 md:h-24 rounded-full border-4 border-secondary flex items-center justify-center bg-secondary/20">
+          <div className="relative w-20 md:w-24 h-20 md:h-24 rounded-full border-2 border-secondary flex items-center justify-center bg-black">
             <div className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-teal-400">
                 {progress}%
               </div>
-              <div className="text-xs text-muted-foreground">In Progress</div>
+              <div className="text-xs text-white">In Progress</div>
             </div>
-            <svg className="absolute inset-0 w-20 md:w-24 h-20 md:h-24 transform -rotate-90">
-              <circle
-                cx="40"
-                cy="40"
-                r="36"
-                fill="none"
-                stroke="hsl(var(--accent))"
-                strokeWidth="4"
-                strokeDasharray={`${(progress / 100) * 226} 226`}
-                style={{ transition: "all 0.3s ease" }}
-              />
-            </svg>
           </div>
         </div>
 

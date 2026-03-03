@@ -3,7 +3,7 @@ import { AlertCircle, Info } from "lucide-react";
 
 export const FindingLogs = () => {
   return (
-    <div className="w-full md:w-96 flex flex-col bg-card border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden">
+    <div className="w-full md:w-96 flex flex-col bg-white dark:bg-[#0D1621] border border-slate-300 dark:border-slate-700 rounded-lg overflow-hidden">
       {/* Header */}
       <div className="border-b border-b-slate-200 dark:border-b-slate-700 px-4 py-3 bg-secondary">
         <h3 className="font-semibold text-sm text-foreground">Finding Log</h3>

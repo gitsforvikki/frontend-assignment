@@ -23,7 +23,6 @@ export default async function ScanDetails({
             <FindingLogs />
           </div>
         </div>
-        
       </div>
       <ScaneFooter/>
     </div>

@@ -41,7 +41,7 @@ const rightContent = [
 export const ScaneFooter = () => {
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-center ml-0 md:ml-64 border-t border-t-slate-200 dark:border-t-slate-700 px-4 py-3 gap-4 text-xs">
+      <div className="flex flex-col md:flex-row md:justify-between items-center ml-0 border-t border-t-slate-200 dark:border-t-slate-700 px-4 py-3 gap-4 text-xs">
         <div className="flex items-center gap-6">
           {leftContent.map((item) => (
             <div className="flex items-center gap-2" key={item.id}>
