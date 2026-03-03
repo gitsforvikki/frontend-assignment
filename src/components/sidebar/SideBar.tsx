@@ -1,7 +1,7 @@
 "use client";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
+
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import ThemeToggle from "@/utils/themeToggle";
 import {
   LayoutDashboard,
@@ -9,7 +9,6 @@ import {
   ScanSearch,
   CalendarClock,
   Bell,
-  LifeBuoy,
   HelpingHandIcon,
   LucideSettings,
   type LucideIcon,
@@ -25,16 +24,29 @@ type NavItem = {
 const navItems: NavItem[] = [
   { label: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
   { label: "Projects", href: "/projects", icon: FolderKanban },
-  { label: "Scane", href: "/scan/1", icon: ScanSearch },
-  { label: "Schedule", href: "/schedule", icon: CalendarClock },
-  { label: "Notification", href: "/notification", icon: Bell },
-  { label: "Settings", href: "/settings", icon: LucideSettings },
-  { label: "Support", href: "/support", icon: HelpingHandIcon },
+  { label: "Scan", href: "/scan/1", icon: ScanSearch },
+  { label: "Schedule", href: "/Schedule", icon: CalendarClock },
+  { label: "Notification", href: "/Notification", icon: Bell },
+  { label: "Settings", href: "/Settings", icon: LucideSettings },
+  { label: "Support", href: "/Support", icon: HelpingHandIcon },
 ];
 
 export default function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const [activeHash, setActiveHash] = useState("");
+  const pathname = usePathname(); // ✅ Next.js way
+
+  // Track active hash sections
+  useEffect(() => {
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash);
+    };
+
+    handleHashChange();
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <>
@@ -46,6 +58,7 @@ export default function Sidebar() {
         {isOpen ? "✕" : "☰"}
       </button>
 
+      {/* Overlay */}
       {isOpen && (
         <div
           className="md:hidden fixed inset-0 bg-black/50 z-30"
@@ -53,8 +66,9 @@ export default function Sidebar() {
         />
       )}
 
+      {/* Sidebar */}
       <aside
-        className={`fixed left-0 top-0 h-screen w-72 bg-white dark:bg-[#1A1A1A] transform transition-transform duration-300 z-40 md:translate-x-0 ${
+        className={`fixed left-0 top-0 h-screen w-72 bg-white dark:bg-[#1A1A1A] text-white transform transition-transform duration-300 z-40 md:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -65,32 +79,35 @@ export default function Sidebar() {
             {navItems.map((item) => {
               const IconComponent = item.icon;
 
-              const isActive =
-                pathname === item.href || pathname.startsWith(item.href + "/");
+              // ✅ Correct Active Logic
+              const isActive = item.href.startsWith("#")
+                ? activeHash === item.href
+                : pathname === item.href;
 
               return (
-                <Link
+                <a
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={`flex items-center gap-3 px-4 py-3 rounded-full transition-all duration-200 group ${
                     isActive
-                      ? "bg-teal-100 text-teal-600 font-semibold"
-                      : "text-slate-500 hover:bg-teal-50 hover:text-teal-600"
+                      ? "bg-teal-100 text-teal-500"
+                      : "text-slate-300 hover:bg-teal-100 hover:text-teal-500"
                   }`}
                 >
                   <IconComponent
                     size={20}
-                    className={`transition-transform ${
-                      isActive ? "scale-110" : "group-hover:scale-110"
-                    }`}
+                    className="group-hover:scale-110 transition-transform"
                   />
-                  <span>{item.label}</span>
-                </Link>
+                  <span className="font-medium text-gray-500">
+                    {item.label}
+                  </span>
+                </a>
               );
             })}
           </nav>
 
+          {/* Theme Toggle */}
           <div className="p-4">
             <ThemeToggle />
           </div>

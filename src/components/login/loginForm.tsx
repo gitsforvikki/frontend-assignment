@@ -1,8 +1,9 @@
 "use client";
 
-import { Eye, EyeOff } from "lucide-react";
+import { loginAction } from "@/server-action";
+import { AppleIcon, ChromeIcon, Eye, EyeOff, FacebookIcon } from "lucide-react";
 import { useState } from "react";
-
+import { Apple, Chrome, Facebook } from "lucide-react";
 export const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -26,11 +27,12 @@ export const LoginForm = () => {
         </div>
 
         {/* Form */}
-        <form className="space-y-4 mb-6">
+        <form action={loginAction} className="space-y-4 mb-6">
           {/* First Name */}
           <div>
             <input
               type="text"
+              required
               name="firstName"
               placeholder="First name"
               className="w-full px-4 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-gray-50 text-gray-900 placeholder-gray-400"
@@ -41,6 +43,7 @@ export const LoginForm = () => {
           <div>
             <input
               type="text"
+              required
               name="lastName"
               placeholder="Last name"
               className="w-full px-4 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-gray-50 text-gray-900 placeholder-gray-400"
@@ -52,6 +55,7 @@ export const LoginForm = () => {
             <input
               type="email"
               name="email"
+              required
               placeholder="Email address"
               className="w-full px-4 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-gray-50 text-gray-900 placeholder-gray-400"
             />
@@ -63,6 +67,7 @@ export const LoginForm = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
+                required
                 placeholder="Password (8+ characters)"
                 className="w-full px-4 py-1.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-gray-50 text-gray-900 placeholder-gray-400"
               />
@@ -80,6 +85,7 @@ export const LoginForm = () => {
             <input
               type="checkbox"
               name="terms"
+              required
               className="mt-1 rounded border-gray-300 text-teal-500 focus:ring-teal-500 cursor-pointer bg-transparent"
             />
             <label className="text-sm text-gray-600">
@@ -123,30 +129,14 @@ export const LoginForm = () => {
 
         {/* Social Login Buttons */}
         <div className="grid grid-cols-3 gap-3">
-          <button className="flex items-center justify-center h-11 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-            <span className="text-xl">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C2.79 15.25 3.51 7.59 9.05 7.31c1.35.08 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.48-2.53 3.28l-.35-.28z" />
-              </svg>
-            </span>
+          <button className="flex items-center justify-center h-11 border  rounded-lg transition-colors bg-black border-blue-600">
+            <AppleIcon size={20} />
           </button>
-          <button className="flex items-center justify-center h-11 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-            <span className="text-xl">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.48 10.45h3.53v-3.6h-3.53c-.29-1.45-1.63-2.49-3.19-2.49-1.82 0-3.31 1.42-3.31 3.15 0 .77.31 1.49.82 2.02H5.97v3.6h2.34c.52.52 1.23.84 2.02.84 1.56 0 2.9-1.04 3.19-2.49m-.36-5.84c.99 0 1.81.73 1.97 1.7h-3.94c.16-.97.98-1.7 1.97-1.7z" />
-              </svg>
-            </span>
+          <button className="flex items-center justify-center h-11 border  rounded-lg transition-colors bg-violet-700 border-blue-600">
+            <ChromeIcon size={20} />
           </button>
-          <button className="flex items-center justify-center h-11 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors bg-blue-600 border-blue-600">
-            <span className="text-xl">
-              <svg
-                className="w-5 h-5 text-white"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5c-.563-.074-1.396-.116-2.183-.116-2.15 0-3.946 1.648-3.946 4.646v2.167z" />
-              </svg>
-            </span>
+          <button className="flex items-center justify-center h-11 border rounded-lg transition-colors bg-blue-600 border-blue-600">
+            <AppleIcon size={20} />
           </button>
         </div>
       </div>

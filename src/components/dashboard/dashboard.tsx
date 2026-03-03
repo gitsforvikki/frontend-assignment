@@ -30,7 +30,7 @@ export default function Dashboard() {
     stats.critical + stats.high + stats.medium + stats.low;
 
   return (
-    <div className="flex min-h-screen  text-foreground ml-6">
+    <div className="flex min-h-screen text-foreground ml-3">
       {/* Main Content */}
       <div className="w-full md:ml-64 flex-1 overflow-auto space-y-5">
         <TopHeader />
@@ -38,7 +38,7 @@ export default function Dashboard() {
         <div className="bg-white dark:bg-[#0F0F0F] rounded p-4 md:p-6 ">
           <ProjectMeta />
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             <StatCard
               label="Critical Severity"
               value={stats.critical}

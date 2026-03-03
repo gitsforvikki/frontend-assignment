@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 .container {
-  @apply px-4 sm:px-6 lg:px-8;
+  @apply px-4 sm:px-6 lg:px-8 mx-auto;
 }
 
 .backgroundColor {
