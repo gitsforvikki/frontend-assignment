@@ -1,7 +1,7 @@
 export const TopHeader = () => {
   return (
-    <div className="w-full  text-white border-b border-slate-300 dark:border-slate-700 mb-4 sticky top-0 z-50">
-      <div className="flex items-center justify-between px-6 py-4">
+    <div className="w-full  text-white border-b border-slate-300 dark:border-slate-700 mb-4">
+      <div className="flex flex-col md:flex-row gap-y-3 items-center justify-between px-6 py-4">
         {/* Left - Breadcrumb */}
         <div className="flex items-center gap-3 text-sm">
           <span className="font-semibold text-gray-700 dark:text-white">Scan</span>

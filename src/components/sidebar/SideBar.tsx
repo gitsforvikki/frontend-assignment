@@ -52,7 +52,7 @@ export default function Sidebar() {
       {/* Mobile Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+        className="md:hidden fixed top-4 left-4 z-50 p-2 rounded-lg text-white transition"
       >
         {isOpen ? "✕" : "☰"}
       </button>
@@ -72,10 +72,7 @@ export default function Sidebar() {
         }`}
       >
         <div className="flex flex-col h-full">
-        
-  <Icon />
-
-         
+          <Icon />
           <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -96,7 +93,9 @@ export default function Sidebar() {
                     size={20}
                     className="group-hover:scale-110 transition-transform"
                   />
-                  <span className="font-medium text-gray-500">{item.label}</span>
+                  <span className="font-medium text-gray-500">
+                    {item.label}
+                  </span>
                 </a>
               );
             })}

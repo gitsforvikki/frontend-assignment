@@ -61,28 +61,7 @@ export const FindingLogs = () => {
         ))}
       </div>
 
-      {/* Bottom Status Bar */}
-      <div className="border-t border-t-slate-200 dark:border-t-slate-700 bg-secondary px-4 py-3 grid grid-cols-4 gap-2 text-xs">
-        <div>
-          <span className="text-muted-foreground">Sub-Agents</span>
-          <div className="font-semibold text-foreground">2</div>
-        </div>
-        <div>
-          <span className="text-muted-foreground">Parallel</span>
-          <div className="font-semibold text-foreground">3</div>
-        </div>
-        <div>
-          <span className="text-muted-foreground">Operations</span>
-          <div className="font-semibold text-foreground">12</div>
-        </div>
-        <div>
-          <span className="text-muted-foreground flex items-center gap-1">
-            <span className="text-severity-critical">■</span>2{" "}
-            <span className="text-severity-high">■</span>3
-            <span className="text-severity-medium">■</span>1
-          </span>
-        </div>
-      </div>
+      
     </div>
   );
 };

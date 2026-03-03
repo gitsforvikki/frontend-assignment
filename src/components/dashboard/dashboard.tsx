@@ -33,7 +33,7 @@ export default function Dashboard() {
     <div className="flex min-h-screen  text-foreground ml-6">
       {/* Main Content */}
       <div className="w-full md:ml-64 flex-1 overflow-auto space-y-5">
-        {/* <TopHeader /> */}
+        <TopHeader />
         {/* Stats Bar */}
         <div className="bg-white dark:bg-[#0D1621] rounded p-4 md:p-6 ">
           <ProjectMeta />

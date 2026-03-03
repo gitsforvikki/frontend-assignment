@@ -11,7 +11,7 @@ const steps = [
 export const Progress = () => {
   const progress = 0;
   return (
-    <div className="border border-slate-300 dark:border-slate-700 bg-background sticky top-0 z-10 p-4 md:p-6 overflow-y-auto">
+    <div className="border border-slate-300 dark:border-slate-700 bg-background p-4 md:p-6 overflow-y-auto">
       <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
         {/* Circular Progress */}
         <div className="flex flex-col items-center border-b border-r-0  md:border-b-0 md:border-r border-slate-300 dark:border-slate-700 pr-4 md:pr-6 pb-6 md:pb-0">
