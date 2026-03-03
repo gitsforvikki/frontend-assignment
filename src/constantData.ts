@@ -1,4 +1,4 @@
-import { ScanType } from "./types";
+import { FindingType, LogEntryType, ScanType } from "./types";
 
  export const projectMeta = [
   { title: "Org", subtitle: "Project X" },
@@ -142,5 +142,74 @@ export const scanData: ScanType[] = [
     medium: 1,
     low: 0,
     lastScan: "5d ago",
+  },
+];
+
+export const logEntries: LogEntryType[] = [
+  {
+    timestamp: "[00:00:01]",
+    message: "1:11 begin a systematic penetration test on ",
+    type: "info",
+    highlights: [
+      { text: "helpdesk.demosecurity.com", color: "text-accent" },
+    ],
+  },
+  {
+    timestamp: "[00:00:05]",
+    message: "Good! target is online. Now let us perform port scanning to identify running services.",
+    type: "success",
+  },
+  {
+    timestamp: "[00:00:08]",
+    message: "Excellent reconnaissance results: [code] Let us probe deeper into the discovered services...",
+    type: "info",
+  },
+  {
+    timestamp: "[00:00:12]",
+    message: "Great! I found a login page for a Help Desk Platform. I can see a normal login portal. Let me test this application for XSS and SQLi. Let me first test if there's a /api endpoint inside. Let me [code]...",
+    type: "info",
+  },
+  {
+    timestamp: "[00:00:15]",
+    message: "Great! I found a page that shows dashboard using a ",
+    type: "info",
+    highlights: [{ text: '"X-UserID: 10032"', color: "text-accent" }],
+  },
+  {
+    timestamp: "[00:00:18]",
+    message: "header. The dashboard using a header. Let me check what happens when I modify a user's dashboard by changing the X-UserID header. Let me [code]...",
+    type: "info",
+  },
+  {
+    timestamp: "[00:00:21]",
+    message: "Great! I accessed the dashboard using a X-UserID header. I can see a user's private [code] using a header with different user IDs, I can access any user's dashboard by just changing the X-UserID header.",
+    type: "warning",
+  },
+];
+
+export const findings: FindingType[] = [
+  {
+    id: "1",
+    severity: "Critical",
+    title: "SQL Injection in Authentication Endpoint",
+    timestamp: "[04:32:18]",
+    endpoint: "/api/login",
+    description: "Time-based SQL injection confirmed on user-controlled input during authentication. Exploitation allows arbitrary database access.",
+  },
+  {
+    id: "2",
+    severity: "High",
+    title: "Unauthorised Access to User Metadata",
+    timestamp: "[04:32:18]",
+    endpoint: "/api/users",
+    description: "Authentication group can circumvent authorization of other groups' profiles using predictable user IDs without proper access controls.",
+  },
+  {
+    id: "3",
+    severity: "Medium",
+    title: "Broken Authentication Rate Limiting",
+    timestamp: "[04:32:18]",
+    endpoint: "/password/reset",
+    description: "No rate limiting on the password reset form allows brute force attacks.",
   },
 ];

@@ -10,3 +10,18 @@ export interface ScanType {
   low: number;
   lastScan: string;
 }
+export interface LogEntryType {
+  timestamp: string;
+  message: string;
+  type: "info" | "warning" | "error" | "success";
+  highlights?: { text: string; color: string }[];
+}
+
+export interface FindingType {
+  id: string;
+  severity: "Critical" | "High" | "Medium" | "Low";
+  title: string;
+  timestamp: string;
+  endpoint: string;
+  description: string;
+}
