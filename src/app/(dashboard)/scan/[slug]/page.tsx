@@ -1,3 +1,5 @@
+import { FindingLogs } from "@/components/scane/FindingLogs";
+import { LiveScaneConsole } from "@/components/scane/LiveScaneConsole";
 import { Progress } from "@/components/scane/Progress";
 import { TopHeader } from "@/components/ui/TopHeader";
 
@@ -14,6 +16,10 @@ export default async function ScanDetails({
         {/* <TopHeader /> */}
         <Progress />
         {/* Stats Bar */}
+        <div className="flex-1 flex flex-col md:flex-row gap-4 md:gap-6 overflow-hidden">
+          <LiveScaneConsole />
+          <FindingLogs />
+        </div>
       </div>
     </div>
   );
