@@ -25,13 +25,13 @@ export const StatCard = ({
         <div className="flex gap-x-3 items-center">
           <div className="text-2xl font-bold text-foreground">{value}</div>
           <div
-            className={isPositive ? "text-severity-high" : "text-severity-low"}
+            className={isPositive ? "text-red-500" : "text-green-500"}
           >
-            <span className="flex items-center gap-x-2">
+            <span className={"flex items-center gap-x-2"}>
               {isPositive ? (
-                <TrendingUp size={14} className="text-severity-high" />
+                <TrendingUp size={14} className="text-red-500" />
               ) : (
-                <TrendingDown size={14} className="text-severity-low" />
+                <TrendingDown size={14} className="text-green-500" />
               )}{" "}
               {Math.abs(change)}% change from yesterday
             </span>
