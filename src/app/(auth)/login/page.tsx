@@ -1,5 +1,16 @@
+import { Metadata } from "next";
 import { LoginForm } from "@/components/login/loginForm";
 import { LoginInfo } from "@/components/login/loginInfo";
+
+
+export const metadata: Metadata = {
+  title: "Login | aps",
+  description: "Login to access your dashboard and manage your account.",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function LoginPage() {
   return (

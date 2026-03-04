@@ -1,5 +1,10 @@
+import type { Metadata } from "next";
 import Dashboard from "@/components/dashboard/dashboard";
 
+export const metadata: Metadata = {
+  title: "Dashboard",
+  description: "Overview of your account activity and analytics.",
+};
 export default function DashboardPage() {
   return (
     <>

@@ -1,8 +1,26 @@
+import { Metadata } from "next";
 import { FindingLogs } from "@/components/scane/FindingLogs";
 import { LiveScaneConsole } from "@/components/scane/LiveScaneConsole";
 import { Progress } from "@/components/scane/Progress";
 import { ScaneFooter } from "@/components/scane/ScaneFooter";
 import { TopHeader } from "@/components/ui/TopHeader";
+
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  return {
+    title: `Scan ${slug} - Live Console`,
+    description:
+      "Monitor real-time scan progress, vulnerability findings, and verification logs.",
+    robots: {
+      index: false,
+      follow: false,
+    },
+  };
+}
 
 export default async function ScanDetails({
   params,
@@ -24,7 +42,7 @@ export default async function ScanDetails({
           </div>
         </div>
       </div>
-      <ScaneFooter/>
+      <ScaneFooter />
     </div>
   );
 }
